@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saludos con Salmos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Saludos Diarios con Salmos</h1>
+        <div id="saludo-dias" class="saludo">
+            <strong>Buenos días:</strong> {{ saludos.dias }}
+            <button onclick="copiar('copyDias')">Copiar</button>
+            <button onclick="compartir('{{ saludos.dias }}')">Compartir</button>
+        </div>
+        <div id="saludo-tardes" class="saludo">
+            <strong>Buenas tardes:</strong> {{ saludos.tardes }}
+            <button onclick="copiar('copyTardes')">Copiar</button>
+            <button onclick="compartir('{{ saludos.tardes }}')">Compartir</button>
+        </div>
+        <div id="saludo-noches" class="saludo">
+            <strong>Buenas noches:</strong> {{ saludos.noches }}
+            <button onclick="copiar('copyNoches')">Copiar</button>
+            <button onclick="compartir('{{ saludos.noches }}')">Compartir</button>
+        </div>
+        <button id="refrescar">Refrescar Saludos</button>
+        <footer>Generado con amor y OpenAI. Recuerda: Esto es inspiracional, no sustituye la fe personal.</footer>
+    </div>
+
+    <!-- Hidden for copy -->
+    <textarea id="copyDias" style="display:none;">{{ saludos.dias }}</textarea>
+    <textarea id="copyTardes" style="display:none;">{{ saludos.tardes }}</textarea>
+    <textarea id="copyNoches" style="display:none;">{{ saludos.noches }}</textarea>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

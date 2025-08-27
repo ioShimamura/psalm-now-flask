@@ -1,0 +1,63 @@
+body {
+    background: linear-gradient(to bottom, #000000, #1a1a1a); /* Fondo oscuro con gradiente */
+    color: white;
+    font-family: 'Georgia', serif; /* Fuente 'bíblica' */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    text-align: center;
+    transition: background 0.5s; /* Para toggle modo claro si agregas */
+}
+.container {
+    max-width: 80%;
+    padding: 20px;
+    animation: fadeIn 1s ease-in-out;
+}
+@keyframes fadeIn {
+    from { opacity: 0; } to { opacity: 1; }
+}
+.saludo {
+    font-size: 1.2em;
+    margin: 20px 0;
+    padding: 10px;
+    border: 1px solid #444;
+    border-radius: 8px;
+    transition: box-shadow 0.3s;
+}
+.saludo:hover, .saludo.highlight {
+    box-shadow: 0 0 10px #ffd700; /* Dorado para highlight */
+}
+button {
+    background: #333;
+    color: white;
+    border: 1px solid white;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin: 5px;
+    transition: background 0.3s;
+}
+button:hover {
+    background: #555;
+}
+#refrescar {
+    background: #4CAF50; /* Verde para refrescar */
+}
+footer {
+    margin-top: 20px;
+    font-size: 0.8em;
+    color: #aaa;
+}
+/* Responsividad */
+@media (max-width: 600px) {
+    .saludo { font-size: 1em; }
+    button { padding: 8px 16px; font-size: 0.9em; }
+}
+/* Íconos (usa Font Awesome si agregas CDN) */
+.saludo:before {
+    content: '☀️'; /* Ej. sol para días; personaliza */
+    margin-right: 10px;
+}
+#saludo-tardes:before { content: '🌤️'; }
+#saludo-noches:before { content: '🌙'; }

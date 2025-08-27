@@ -1,0 +1,5 @@
+flask==3.0.3
+mysql-connector-python==9.0.0
+requests==2.32.3
+python-dotenv==1.0.1  # Para manejar env vars de forma segura
+gunicorn==22.0.0  # Para deploy en Render
